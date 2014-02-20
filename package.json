@@ -4,7 +4,7 @@
         "email": "golyshev.dmitry@yandex.ru"
     },
     "bugs": {
-        "url": "https://github.com/golyshevd/module/issues"
+        "url": "https://github.com/fistlabs/fist.util.id/issues"
     },
     "contributors": [
         {
@@ -13,7 +13,7 @@
         }
     ],
     "dependencies": {},
-    "description": "",
+    "description": "generate unique alpha-numeric ids",
     "devDependencies": {
         "jscs": "",
         "eslint": "",
@@ -21,15 +21,15 @@
         "istanbul": ""
     },
     "license": "MIT",
-    "main": "",
-    "name": "",
+    "main": "id",
+    "name": "fist.util.id",
     "repository": {
         "type": "git",
-        "url": "git://github.com/golyshevd/module.git"
+        "url": "git://github.com/fistlabs/fist.util.id.git"
     },
     "scripts": {
         "test": "tools/test"
     },
     "version": "0.0.0",
-    "readme": ""
+    "readme": "fist.util.id [![Build Status](https://travis-ci.org/fistlabs/fist.util.id.png?branch=v0.0.x)](https://travis-ci.org/fistlabs/fist.util.id)\n=========\n\ngenerate unique alpha-numeric ids\n"
 }
