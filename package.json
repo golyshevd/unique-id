@@ -33,6 +33,6 @@
         "unit": "node test/runner",
         "cover": "istanbul cover test/runner"
     },
-    "version": "0.0.2",
+    "version": "0.0.1",
     "readme": "fist.lang.id [![Build Status](https://travis-ci.org/fistlabs/fist.lang.id.png?branch=v0.0.x)](https://travis-ci.org/fistlabs/fist.lang.id)\n=========\n\ngenerate unique alpha-numeric ids\n"
 }
