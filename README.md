@@ -1,4 +1,4 @@
-fist.lang.id [![Build Status](https://travis-ci.org/fistlabs/fist.lang.id.png?branch=v0.0.x)](https://travis-ci.org/fistlabs/fist.lang.id)
+unique-id [![Build Status](https://travis-ci.org/golyshevd/unique-id.png?branch=master)](https://travis-ci.org/golyshevd/unique-id)
 =========
 
 generate unique alpha-numeric ids

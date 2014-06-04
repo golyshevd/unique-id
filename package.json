@@ -4,7 +4,7 @@
         "email": "golyshev.dmitry@yandex.ru"
     },
     "bugs": {
-        "url": "https://github.com/fistlabs/fist.lang.id/issues"
+        "url": "https://github.com/golyshevd/unique-id/issues"
     },
     "contributors": [
         "Golyshev Dmitrii <golyshev.dmitry@yandex.ru>"
@@ -12,27 +12,29 @@
     "dependencies": {},
     "description": "generate unique alpha-numeric ids",
     "devDependencies": {
-        "jscs": "",
-        "eslint": "",
-        "nodeunit": "",
-        "istanbul": "",
-        "glob": ""
+        "jscs": "~1.4.5",
+        "eslint": "~0.6.2",
+        "nodeunit": "~0.9.0",
+        "istanbul": "~0.2.10",
+        "benchmark": "~1.0.0",
+        "glob": "~4.0.2",
+        "idgen": "~2.0.2"
     },
     "license": "MIT",
-    "main": "id",
-    "name": "fist.lang.id",
+    "main": "unique-id",
+    "name": "unique-id",
     "repository": {
         "type": "git",
-        "url": "git://github.com/fistlabs/fist.lang.id.git"
+        "url": "git://github.com/golyshevd/unique-id.git"
     },
     "scripts": {
         "test": "npm run lint && npm run unit",
         "jscs": "jscs .",
-        "eslint": "eslint test *.js",
+        "eslint": "eslint .",
         "lint": "npm run jscs && npm run eslint",
-        "unit": "node test/runner",
-        "cover": "istanbul cover test/runner"
+        "unit": "test/runner",
+        "cover": "istanbul cover test/runner",
+        "benchmark": "benchmark/runner"
     },
-    "version": "0.0.1",
-    "readme": "fist.lang.id [![Build Status](https://travis-ci.org/fistlabs/fist.lang.id.png?branch=v0.0.x)](https://travis-ci.org/fistlabs/fist.lang.id)\n=========\n\ngenerate unique alpha-numeric ids\n"
+    "version": "0.0.1"
 }

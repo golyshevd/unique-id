@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+'use strict';
+
+var Benchmark = require('benchmark').Benchmark;
+var Suite = Benchmark.Suite;
+
+var suite = new Suite();
+
+var idgen = require('idgen');
+var uniqueId = require('../unique-id');
+
+Benchmark.options.minSamples = 100;
+
+suite.add('idgen(8)', function () {
+    idgen(8);
+});
+
+suite.add('uniqueId(8)', function () {
+    uniqueId(8);
+});
+
+suite.on('cycle', function (event) {
+    console.log(String(event.target));
+});
+
+suite.on('complete', function () {
+    console.log();
+});
+
+suite.run({
+    queued: true,
+    async: true
+});

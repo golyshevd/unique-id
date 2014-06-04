@@ -1,10 +1,10 @@
 'use strict';
 
-var uniqueId = require('../id');
+var uniqueId = require('../unique-id');
 
 module.exports = {
 
-    id: function (test) {
+    uniqueId: function (test) {
 
         var i;
         var l = 100000;
@@ -15,7 +15,7 @@ module.exports = {
             id = uniqueId();
 
             test.strictEqual(typeof id, 'string');
-            test.strictEqual(id.length, uniqueId.DEFAULT_LENGHT);
+            test.strictEqual(id.length, 8);
             test.ok(/^\w+$/i.test(id));
             test.ok( !(id in ids) );
 
@@ -26,7 +26,7 @@ module.exports = {
     },
 
     gen: function (test) {
-        test.strictEqual( uniqueId.gen(10).length, 10);
+        test.strictEqual( uniqueId.gen(10, 'asd').length, 10);
         test.done();
     }
 };
