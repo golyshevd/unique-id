@@ -17,7 +17,8 @@
     "glob": "~7.1.2",
     "idgen": "~2.0.2",
     "istanbul": "~0.4.5",
-    "mocha": "^3.4.2"
+    "mocha": "~3.4.2",
+    "unique-string": "~1.0.0"
   },
   "license": "MIT",
   "main": "unique-id",
@@ -32,5 +33,5 @@
     "test": "istanbul cover _mocha",
     "benchmark": "benchmark/runner"
   },
-  "version": "1.0.0"
+  "version": "1.0.1"
 }

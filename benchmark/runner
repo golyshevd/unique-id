@@ -1,25 +1,30 @@
 #!/usr/bin/env node
 'use strict';
 
-var Benchmark = require('benchmark').Benchmark;
-var Suite = Benchmark.Suite;
+const Benchmark = require('benchmark').Benchmark;
+const Suite = Benchmark.Suite;
 
-var suite = new Suite();
+const suite = new Suite();
 
-var idgen = require('idgen');
-var uniqueId = require('../unique-id');
+const idgen = require('idgen');
+const uniqueId = require('../unique-id');
+const uniqueString = require('unique-string');
 
 Benchmark.options.minSamples = 100;
 
-suite.add('idgen(8)', function () {
-    idgen(8);
+suite.add('idgen(32)', () => {
+    idgen(32);
 });
 
-suite.add('uniqueId(8)', function () {
-    uniqueId(8);
+suite.add('uniqueId(32)', () => {
+    uniqueId(32);
 });
 
-suite.on('cycle', function (event) {
+suite.add('uniqueString(32)', () => {
+    uniqueString(32);
+});
+
+suite.on('cycle', (event) => {
     console.log(String(event.target));
 });
 
