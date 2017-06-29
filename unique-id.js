@@ -1,47 +1,22 @@
 'use strict';
 
-var DEFAULT_CHARSET = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
-    'abcdefghijklmnopqrstuvwxyz';
-var DEFAULT_LENGTH = 8;
+const DEFAULT_CHARSET = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+const DEFAULT_LENGTH = 8;
 
-/**
- * @param {Number} [length]
- * @param {String} [charset]
- *
- * @returns {String}
- * */
-function uniqueId (length, charset) {
-
-    return uniqueId.gen(length || DEFAULT_LENGTH, charset || DEFAULT_CHARSET);
-}
-
-/**
- * @public
- * @static
- * @memberIof uniqueId
- * @method
- *
- * @param {Number} length
- * @param {String} charset
- *
- * @returns {String}
- * */
-uniqueId.gen = function (length, charset) {
-
-    var result = '';
-    var max = charset.length - 1;
-
-    while ( length ) {
-        length -= 1;
-        result += charset.charAt( randomInt(max) );
-    }
-
-    return result;
-};
-
-function randomInt (max) {
-
+function randomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-module.exports = uniqueId;
+function uniqueId(length = DEFAULT_LENGTH, charset = DEFAULT_CHARSET) {
+    const max = charset.length - 1;
+    let result = '';
+
+    while (length > 0) {
+        length -= 1;
+        result += charset[randomInt(max)];
+    }
+
+    return result;
+}
+
+module.exports = uniqueId.default = uniqueId.uniqueId = uniqueId;

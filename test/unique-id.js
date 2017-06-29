@@ -1,32 +1,26 @@
+#!/usr/bin/env mocha
 'use strict';
 
-var uniqueId = require('../unique-id');
+const assert = require('assert');
+const uniqueId = require('../unique-id');
 
-module.exports = {
+describe('unique-id', () => {
+    it('Should generate unique ids', () => {
+        let ids = Object.create(null);
 
-    uniqueId: function (test) {
+        for (let i = 0, l = 100000; i < l; i += 1) {
+            const id = uniqueId();
 
-        var i;
-        var l = 100000;
-        var id;
-        var ids = Object.create(null);
-
-        for ( i = 0; i < l; i += 1 ) {
-            id = uniqueId();
-
-            test.strictEqual(typeof id, 'string');
-            test.strictEqual(id.length, 8);
-            test.ok(/^\w+$/i.test(id));
-            test.ok( !(id in ids) );
+            assert.strictEqual(typeof id, 'string');
+            assert.strictEqual(id.length, 8);
+            assert.ok(/^\w+$/i.test(id));
+            assert.ok(!ids[id]);
 
             ids[id] = true;
         }
+    });
 
-        test.done();
-    },
-
-    gen: function (test) {
-        test.strictEqual( uniqueId.gen(10, 'asd').length, 10);
-        test.done();
-    }
-};
+    it('Should support parameters oveloading', () => {
+        assert.strictEqual(uniqueId(10, 'asd').length, 10);
+    });
+});

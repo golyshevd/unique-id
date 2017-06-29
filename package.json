@@ -1,40 +1,36 @@
 {
-    "author": {
-        "name": "Golyshev Dmitrii",
-        "email": "golyshev.dmitry@yandex.ru"
-    },
-    "bugs": {
-        "url": "https://github.com/golyshevd/unique-id/issues"
-    },
-    "contributors": [
-        "Golyshev Dmitrii <golyshev.dmitry@yandex.ru>"
-    ],
-    "dependencies": {},
-    "description": "generate unique alpha-numeric ids",
-    "devDependencies": {
-        "jscs": "~1.4.5",
-        "eslint": "~0.6.2",
-        "nodeunit": "~0.9.0",
-        "istanbul": "~0.2.10",
-        "benchmark": "~1.0.0",
-        "glob": "~4.0.2",
-        "idgen": "~2.0.2"
-    },
-    "license": "MIT",
-    "main": "unique-id",
-    "name": "unique-id",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/golyshevd/unique-id.git"
-    },
-    "scripts": {
-        "test": "npm run lint && npm run unit",
-        "jscs": "jscs .",
-        "eslint": "eslint .",
-        "lint": "npm run jscs && npm run eslint",
-        "unit": "test/runner",
-        "cover": "istanbul cover test/runner",
-        "benchmark": "benchmark/runner"
-    },
-    "version": "0.0.1"
+  "author": {
+    "name": "Golyshev Dmitrii",
+    "email": "golyshev.dmitry@yandex.ru"
+  },
+  "bugs": {
+    "url": "https://github.com/golyshevd/unique-id/issues"
+  },
+  "contributors": [
+    "Golyshev Dmitrii <golyshev.dmitry@yandex.ru>"
+  ],
+  "dependencies": {},
+  "description": "Generate unique alpha-numeric ids",
+  "devDependencies": {
+    "benchmark": "~2.1.0",
+    "eslint": "~4.1.1",
+    "glob": "~7.1.2",
+    "idgen": "~2.0.2",
+    "istanbul": "~0.4.5",
+    "mocha": "^3.4.2"
+  },
+  "license": "MIT",
+  "main": "unique-id",
+  "name": "unique-id",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/golyshevd/unique-id.git"
+  },
+  "scripts": {
+    "lint": "eslint unique-id.js",
+    "unit": "mocha",
+    "test": "istanbul cover _mocha",
+    "benchmark": "benchmark/runner"
+  },
+  "version": "1.0.0"
 }
