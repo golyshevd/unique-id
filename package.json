@@ -9,7 +9,6 @@
   "contributors": [
     "Golyshev Dmitrii <golyshev.dmitry@yandex.ru>"
   ],
-  "dependencies": {},
   "description": "Generate unique alpha-numeric ids",
   "devDependencies": {
     "benchmark": "~2.1.0",
@@ -32,6 +31,18 @@
     "unit": "mocha",
     "test": "istanbul cover _mocha",
     "benchmark": "benchmark/runner"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
   },
   "version": "1.0.1"
 }
